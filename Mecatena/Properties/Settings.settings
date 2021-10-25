@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Mecatena.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BDservidor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="BDpuerto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="BDnombre" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mecatena_bd</Value>
+    </Setting>
+    <Setting Name="BDcontra" Type="System.String" Scope="User">
+      <Value Profile="(Default)">w3p8k7_20z1F</Value>
+    </Setting>
+    <Setting Name="BDusuario" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
