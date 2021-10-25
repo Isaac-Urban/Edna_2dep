@@ -71,6 +71,12 @@ namespace Mecatena
 
         }
 
+        public void BuscarProductos(MySqlConnection conexion, string ptipo, string pcantidad, string pdescripcion, string pprecioUnitario, string ptotal)
+        {
+            dgv_datos.DataSource = Clases.ConexionProductos.MetodoBuscar(conexion, ptipo, pcantidad, pdescripcion, pprecioUnitario, ptotal);
+
+        }
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             try
@@ -126,7 +132,7 @@ namespace Mecatena
             {
                 if (cp.AbrirConexion() == true)
                 {
-                    ListarProductos(cp.conexion, txt_tipo.Text, txt_cantidad.Text, txt_descripcion.Text, txt_precioU.Text, txt_total.Text);
+                    BuscarProductos(cp.conexion, txt_tipo.Text, txt_cantidad.Text, txt_descripcion.Text, txt_precioU.Text, txt_total.Text);
                     cp.CerrarConexion();
                 }
             }

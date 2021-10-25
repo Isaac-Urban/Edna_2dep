@@ -90,6 +90,29 @@ namespace Mecatena.Clases
             return lista;
         }
 
+        public static List<ConexionProductos> MetodoBuscar(MySqlConnection conexion, string ptipo, string pcantidad, string pdescripcion, string pprecioUnitario, string ptotal)
+        {
+            List<ConexionProductos> lista = new List<ConexionProductos>();
+
+            MySqlCommand comando = new MySqlCommand(String.Format("SELECT idproducto, tipo, cantidad, descripcion, precioUnitario, total FROM productos_bd WHERE tipo LIKE ('%{0}%')", ptipo, pcantidad, pdescripcion, pprecioUnitario, ptotal), conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ConexionProductos pproducto = new ConexionProductos();
+                pproducto.idproducto = reader.GetInt32(0);
+                pproducto.tipo = reader.GetString(1);
+                pproducto.cantidad = reader.GetString(2);
+                pproducto.descripcion = reader.GetString(3);
+                pproducto.precioUnitario = reader.GetString(4);
+                pproducto.total = reader.GetString(5);
+
+                lista.Add(pproducto);
+
+            }
+            return lista;
+        }
+
         public static ConexionProductos obtenerProducto(MySqlConnection conexion, int pIdProducto)
         {
             ConexionProductos pproducto = new ConexionProductos();
